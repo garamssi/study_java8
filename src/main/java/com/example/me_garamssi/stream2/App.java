@@ -46,9 +46,9 @@ public class App {
                         .forEach( oc -> System.out.println(oc.getTitle()));
 
                 // 단축
-                springClasses.stream()
-                        .filter(Predicate.not(OnlineClass::isClosed))
-                        .forEach( oc -> System.out.println( oc.getTitle()));
+//                springClasses.stream()
+//                        .filter(Predicate.not(OnlineClass::isClosed))
+//                        .forEach( oc -> System.out.println( oc.getTitle()));
 
 
                 System.out.println("수업 이름만 모아서 스트림 만들기");
