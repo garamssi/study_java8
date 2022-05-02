@@ -45,7 +45,7 @@ public class Foo {
                 System.out.println(multiply2AndPlus10.apply(2));
 
                 /**
-                 * andTen 앞의 함수를 먼저 실행하고 리턴 값으로 뒤의 함수를 실행한다.
+                 * andThen 앞의 함수를 먼저 실행하고 리턴 값으로 뒤의 함수를 실행한다.
                  * */
                 System.out.println(plusTen2.andThen(multiply2).apply(2));
 

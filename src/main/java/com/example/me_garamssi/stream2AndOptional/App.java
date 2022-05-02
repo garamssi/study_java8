@@ -1,10 +1,10 @@
-package com.example.me_garamssi.stream2;
+package com.example.me_garamssi.stream2AndOptional;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import java.util.function.Predicate;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -87,5 +87,73 @@ public class App {
                 spring.forEach(System.out::println);
 
 
+
+
+
+                /**
+                 * Optional
+                 * */
+                // spring으로 시작하는 첫번째 값을 가져와라,
+                Optional<OnlineClass> spring1 = springClasses.stream()
+                        .filter(oc -> oc.getTitle().startsWith("spring"))
+                        .findFirst();
+
+                boolean present = spring1.isPresent();
+                System.out.println(present);
+
+                // optional에 비어있는 값을 가져올 때
+                // NoSuchElementException ( RunTimeException ) 발생
+//                OnlineClass onlineClass = spring1.get();
+//                System.out.println(onlineClass.getTitle());
+
+                // 값이 있으면 동작하는 문법
+                spring1.ifPresent( s -> System.out.println(s.getTitle()));
+
+
+                // 값이 없으면 createNewClass() 새로운 클래스를 만들어서 주입
+                // orElse()의 인자값은 인터페이스가 아닌 인스턴스가 들어가야한다.
+                // 상수로 만들어져 있는 것
+                OnlineClass onlineClass = spring1.orElse(createNewClass());
+
+
+                // Lazy한 접근 방법
+                // 동적인 방법
+                OnlineClass onlineClass2 = spring1.orElseGet(App::createNewClass);
+
+                // 값이 없을 때 Throw 던지는 법
+                OnlineClass onlineClass3 = spring1.orElseThrow(IllegalStateException::new);
+
+                // 값이 있다는 가정하에 close가 안된 값을 찾으려 할 때 값이 비어진 empty로 반환한다.
+                Optional<OnlineClass> onlineClass1 = spring1.filter(oc -> !oc.isClosed());
+                System.out.println(onlineClass1.isPresent());
+
+
+                // 맵으로 사용 할 때
+                Optional<Integer> integer = spring1.map(OnlineClass::getId);
+                System.out.println(integer.isPresent());
+
+
+                /**
+                 * flatMap은 뎁스를 원뎁스로 펼쳐서 사용할 수 있게 해준다.
+                 *
+                 * if getProgress메소드가 optional.empty()를 반환 해줄 때,
+                 *
+                 * Optional<Optional<Progress>> progress = optional.flatMap(OnlineClass::getProgress);
+                 *
+                 * 아래의 코드를 위와 같이 줄여서 사용 가능,
+                 *
+                 * Optional<Optional<Progress>> progress1 = optional.map(OnlineClass::getProgress);
+                 * Optional<Progress> progress2 = progress1.orElse(Optional.empty());
+                 * */
+
+                /**
+                 * 경우에 따라 map, filter 등등 사용 가능
+                 * */
+
+        }
+
+        private static OnlineClass createNewClass() {
+                System.out.println("creating new online class");
+                return new OnlineClass(10, "New Class", false);
         }
 }

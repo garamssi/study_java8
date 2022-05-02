@@ -1,4 +1,4 @@
-package com.example.me_garamssi.stream2;
+package com.example.me_garamssi.stream2AndOptional;
 
 import java.util.Optional;
 
