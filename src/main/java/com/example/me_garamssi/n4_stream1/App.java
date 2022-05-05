@@ -1,4 +1,4 @@
-package com.example.me_garamssi.stream1;
+package com.example.me_garamssi.n4_stream1;
 
 import java.util.ArrayList;
 import java.util.List;

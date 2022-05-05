@@ -1,9 +1,8 @@
-package com.example.me_garamssi.apiDefaultMethodAndStaticMethod;
+package com.example.me_garamssi.n3_apiDefaultMethodAndStaticMethod;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Spliterator;
-import java.util.stream.Collector;
 
 public class App {
         public static void main(String[] args) {

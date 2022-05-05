@@ -1,4 +1,4 @@
-package com.example.me_garamssi.JavaConcurrentProgramming;
+package com.example.me_garamssi.n7_JavaConcurrentProgramming;
 
 public class ConcurrentApp {
         public static void main(String[] args) throws InterruptedException {

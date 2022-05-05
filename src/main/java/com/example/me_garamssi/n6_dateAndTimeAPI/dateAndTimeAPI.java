@@ -1,4 +1,4 @@
-package com.example.me_garamssi.dateAndTimeAPI;
+package com.example.me_garamssi.n6_dateAndTimeAPI;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;

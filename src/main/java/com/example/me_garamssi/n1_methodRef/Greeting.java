@@ -1,4 +1,4 @@
-package com.example.me_garamssi.methodRef;
+package com.example.me_garamssi.n1_methodRef;
 
 public class Greeting {
 

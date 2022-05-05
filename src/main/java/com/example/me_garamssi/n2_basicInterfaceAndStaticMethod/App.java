@@ -1,4 +1,4 @@
-package com.example.me_garamssi.basicInterfaceAndStaticMethod;
+package com.example.me_garamssi.n2_basicInterfaceAndStaticMethod;
 
 public class App {
 

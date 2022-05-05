@@ -1,4 +1,4 @@
-package com.example.me_garamssi.stream2AndOptional;
+package com.example.me_garamssi.n5_stream2AndOptional;
 
 import java.time.Duration;
 

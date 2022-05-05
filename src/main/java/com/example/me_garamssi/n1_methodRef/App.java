@@ -1,7 +1,6 @@
-package com.example.me_garamssi.methodRef;
+package com.example.me_garamssi.n1_methodRef;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
